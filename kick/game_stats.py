@@ -4,6 +4,7 @@ class Game_Stats():
     def __init__(self, ai_settings):
         self.ai_settings = ai_settings
         self.reset_stats()
+        self.game_active = True
 
     def reset_stats(self):
         """游戏运行期间可能变化的统计信息"""
