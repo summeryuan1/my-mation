@@ -135,7 +135,9 @@ def update_bullets(ai_settings, screen, ship, aliens, bullets):
             bullets.remove(bullet)
 
 def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
+    button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+    ai_settings.initializa_dynamic_settings()
     if len(aliens) == 0:
         bullets.empty()
         creat_fleet(ai_settings, screen, ship, aliens)

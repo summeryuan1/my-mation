@@ -9,3 +9,4 @@ class Game_Stats():
     def reset_stats(self):
         """游戏运行期间可能变化的统计信息"""
         self.ship_left = self.ai_settings.ship_limit
+        self.score = 0
