@@ -104,9 +104,10 @@ def fire_bullet(ai_settings, screen, ship, bullets):
         bullets.add(new_bullet)
 
 
-def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button):
+def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button):
     """Update images on the screen, and flip to the new screen."""
     # Redraw the screen, each pass through the loop.
+    sb.show_score()
     screen.fill(ai_settings.bg_color)
 
     # Redraw all bullets, behind ship and aliens.

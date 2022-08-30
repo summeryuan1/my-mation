@@ -7,6 +7,7 @@ import game_functions as gf
 from alien import Alien
 from game_stats import Game_Stats
 from button import Button
+from score_board import Scoreboard
 
 def run_game():
     # Initialize pygame, settings, and screen object.
@@ -19,6 +20,7 @@ def run_game():
     play_button = Button(ai_settings, screen, "Play")
 
     stats = Game_Stats(ai_settings)
+    sb = Scoreboard(ai_settings, screen, stats)
 
     # Set the background color.
     bg_color = (230, 230, 230)
@@ -40,7 +42,7 @@ def run_game():
             ship.update()
             gf.update_bullets(ai_settings,screen, ship, aliens, bullets)
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
-            gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button)
+            gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)
 
 
 run_game()
